@@ -12,8 +12,7 @@ resource "aws_instance" "instance1" {
   root_block_device {
     volume_size = var.volume_size
   }
-  user_data = filebase64(var.user_data)
-  tags={
+   tags={
     Name= "instance-${count.index}"
   }
 }
