@@ -34,5 +34,5 @@ variable "port_list" {
 
 variable "instance" {  
      type=list 
-     default = ["Server-0","Server-1","Server-2"]
+     default = ["instance-0","instance-1","instance-2"]
 }
