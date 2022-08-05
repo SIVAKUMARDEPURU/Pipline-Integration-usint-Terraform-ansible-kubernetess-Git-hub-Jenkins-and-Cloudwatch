@@ -1,0 +1,18 @@
+#####################################...SIVAKUMAR DEPURU...##########################################
+Install plugins in managepackges
+publish over ssh 
+#####################################################################################################
+
+Jenkins script
+rsync -avh /var/lib/jenkins/workspace/ci-cdintegrationdocker/* root@172.31.89.121[Private_Ip of Ansible server]:/opt
+
+Ansible executable script
+cd /opt
+docker build -t $JOB_NAME:$BUILD_ID .
+docker tag $JOB_NAME:$BUILD_ID siva1989/$JOB_NAME:$BUILD_ID
+docker tag $JOB_NAME:$BUILD_ID siva1989/$JOB_NAME:latest
+docker push siva1989/$JOB_NAME:$BUILD_ID
+docker push siva1989/$JOB_NAME:latest
+docker image rmi $JOB_NAME:$BUILD_ID
+docker image rmi siva1989/$JOB_NAME:$BUILD_ID
+docker image rmi siva1989/$JOB_NAME:latest
