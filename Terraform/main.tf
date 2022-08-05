@@ -1,6 +1,6 @@
 resource "aws_instance" "instance1" {
   count = var.instance_count
-  ami = "ami-090fa75fdskjdjadfc"
+  ami = "ami-090fa75af13c156b4"
   instance_type = "t2.micro"
   
     security_groups = [
